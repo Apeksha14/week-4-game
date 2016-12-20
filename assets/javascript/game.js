@@ -2,7 +2,7 @@
 
  $(window).load(function()
  {
-	//document.getElementById("myaudio").play();
+	document.getElementById("myaudio").play();
  });
 
 // Objects to store the details of all the four players
