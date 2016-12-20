@@ -174,7 +174,7 @@ $("button").on("click",function(){
 							$("#defender").html($(this));
 							$("#defender").css("display","block");
 							$("#fightanother").css("display","none");
-
+							$("#attack").css("display","block");
 							$(this).removeClass("enemies");
 							$(this).addClass("defender");
 							$(this).attr("disabled",true);
@@ -182,8 +182,8 @@ $("button").on("click",function(){
 							$("#attack").attr("disabled",false);
 							btnplayers[i].attr("disabled",true);
 							if(enemies.length === 1)
-							{
-								$("#none").html("- none"); // when there are no enemies available
+							{ console.log("inside if");
+								$("#enemydiv").css("display","none"); // when there are no enemies available
 							}
 
 						}
@@ -233,6 +233,8 @@ $("button").on("click",function(){
 			$("#defenderdiv").css("display","none");
 			$("#pick").css("display","block");
 			$("#none").html("");
+			$("#attack").css("display","block");
+			document.getElementById("myaudio").play();
 
 		}
 
@@ -290,7 +292,8 @@ function Fight(fighter,defender,enemies,attackpower)
 			// if power/strength of fighter reaches 0,user loses and the game restarts
 			if(fighter.power <= 0)
 				{
-					
+					document.getElementById("myaudio").pause();
+					$("#attack").css("display","none");
 					$("#stat").css("display","none");
 					$("#lose_gameover").css("display","block");
 					$("#restartdiv").css("display","block");
@@ -305,6 +308,8 @@ function Fight(fighter,defender,enemies,attackpower)
 			
 			if(defender.power <= 0)
 				{
+					$("#defenderdiv").css("display","none");
+					$("#attack").css("display","none");
 					$("#defender").css("display","none");
 					$("#stat").css("display","none");
 					$("#fightanother").css("display","block");
@@ -313,6 +318,9 @@ function Fight(fighter,defender,enemies,attackpower)
 					var index = enemies.indexOf(defender.id);
 					enemies.splice(index,1); //every time user defeats an enemy the
 											 // enemy id is removed from enemies array
+
+					
+
 
 					// user cannot click/choose other enemies until the current enemy is defeated							 
 					if(enemies.length<3)
@@ -331,8 +339,11 @@ function Fight(fighter,defender,enemies,attackpower)
 					// when all the enemies are defeated you win and game is over	
 					if(enemies.length === 0)
 						{
+							document.getElementById("myaudio").pause();
+
+							$("#attack").css("display","none");
 							$("#fightdiv").css("display","none");
-							$("#fight").css("display","none");
+							$("#enemydiv").css("display","none");
 							$("#defenderdiv").css("display","none")
 							$("#win_gameover").css("display","block");
 							$("#fightanother").css("display","none");

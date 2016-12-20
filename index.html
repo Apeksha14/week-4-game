@@ -34,7 +34,7 @@
 
 	<div class="page-header">
 
-  		<h1>STAR WARS RPG!!</h1>
+  		<h1><a href="http://fontmeme.com/star-wars-font/"><img src="http://fontmeme.com/permalink/161220/9a0372412fadaca65ba9366316648012.png" alt="star-wars-font" border="0"></a></h1>
 
 	</div>
 	
@@ -69,13 +69,25 @@
 	
 			</div>
 
-		</div><br>
+		</div>
 
 		<div class="row">
 
-			<div class="col-md-4" id="characterdiv" style="display: none;">
+			<div class="col-md-3" id="characterdiv" style="display: none;">
 
 				<h2>your character</h2>
+
+			</div>
+
+			<div class="col-md-offset-1 col-md-3" id="fightdiv" style="display:none;">
+				
+				<h2>fight section</h2>
+				
+			</div>
+
+			<div class="col-md-offset-3 col-md-1" id="defenderdiv" style="display:none;" >
+
+				<h2>defender</h2>
 
 			</div>
 
@@ -84,6 +96,48 @@
 		<div class="row">
 
 			<div class="col-md-2" id="character">
+
+			</div>
+
+			<div class="col-md-offset-2 col-md-4" id="fight" style="display:none;">
+
+				<button type="button" id="attack" class="attackbtn">attack</button><br><br><br>
+
+				<div id="stat" style="display:none">
+
+					<p>You attacked <span id="enemy_fight"> </span> for <span id="attackf"></span> damage</p><br>
+					<p><span id="defend_fight"></span> attacked you back for <span id="attackd"></span> damage</p>
+
+				</div>
+
+				<div id="lose_gameover" style="display:none">
+
+					<p>You have been defeated..game over!!</p>
+				
+				</div>
+
+				<div id="fightanother" style="display:none">
+
+					<p>You have defeated <span id="enemydf"></span>, you can chose to fight another enemy</p>
+				
+				</div>
+
+				<div id="win_gameover" style="display:none">
+
+					<p>You won..game over!!</p>
+				
+				</div><br>
+
+				<div id="restartdiv" style="display: none">
+
+					<button type="button" id="restart">
+					restart</button>
+
+				</div>
+
+			</div>
+
+			<div class="col-md-offset-2 col-md-2" id="defender">
 
 			</div>
 
@@ -98,6 +152,8 @@
 			</div>
 
 		</div><br>
+
+		</div>
 		
 		<div class="row">
 
@@ -108,86 +164,6 @@
 
 		</div><br>
 
-		<div class="row">
-
-			<div class="col-md-4" id="fightdiv" style="display:none;">
-
-				<h2>fight section</h2>
-				
-			</div>
-
-		</div><br>
-		
-		<div class="row">
-
-			<div class="col-md-4" id="fight" style="display:none;">
-
-				<button type="button" id="attack">attack</button>
-	
-			</div>
-
-		</div><br>
-
-		<div class="row">
-
-			<div class="col-md-4" id="defenderdiv" style="display:none;" >
-
-				<h2>defender</h2>
-
-			</div>
-
-		</div><br>
-		
-		<div class="row">
-
-			<div class="col-md-2" id="defender">
-
-			</div>
-
-			<div class="col-md-5" id="stat" style="display:none">
-
-				<p>You attacked <span id="enemy_fight"> </span> for <span id="attackf"></span> damage</p><br>
-				<p><span id="defend_fight"></span> attacked you back for <span id="attackd"></span> damage</p><br>
-
-
-			</div>
-
-		</div><br>
-
-		<div class="row">
-
-			<div class="col-md-4" id="lose_gameover" style="display:none">
-
-				<p>You have been defeated..game over!!</p>
-				
-			</div>
-
-			<div class="col-md-6" id="fightanother" style="display:none">
-
-				<p>You have defeated <span id="enemydf"></span>, you can chose to fight another enemy</p>
-				
-			</div>
-
-			<div class="col-md-2" id="win_gameover" style="display:none">
-
-				<p>You won..game over!!</p>
-				
-			</div>
-
-
-		</div><br> 
-
-		<div class="row">
-
-			<div class="col-md-3" id="restartdiv" style="display: none">
-
-				<button type="button" id="restart">
-				restart</button>
-
-			</div>
-
-		</div>
-	
 	</div> <!-- Main container div closes -->
 
   	<!-- Include jQuery --> 
